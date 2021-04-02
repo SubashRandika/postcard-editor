@@ -1,9 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useRef, useContext } from 'react';
 import { fabric } from 'fabric';
+import { ImageContext } from '../../context/ImageContext';
 
 const OpenImage = ({ editor }) => {
 	// create hidden file input reference
 	const hiddenFileInput = useRef(null);
+	const setImage = useContext(ImageContext)[1];
 
 	// programmatically click the hidden file input
 	const handleImageOpen = (event) => {
@@ -15,10 +17,16 @@ const OpenImage = ({ editor }) => {
 		fabric.Image.fromURL(
 			URL.createObjectURL(event.target.files[0]),
 			(imageObj) => {
+				imageObj.set({
+					originX: 'middle',
+					originY: 'middle'
+				});
+
 				editor?.canvas.centerObject(imageObj);
 				editor?.canvas.add(imageObj);
 				imageObj.sendBackwards();
 				editor?.canvas.setActiveObject(imageObj);
+				setImage(imageObj);
 			},
 			{
 				transparentCorners: false,
