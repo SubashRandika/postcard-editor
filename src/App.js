@@ -2,6 +2,7 @@ import { useFabricJSEditor } from 'fabricjs-react';
 import CanvasArea from './components/Canvas/CanvasArea';
 import DeleteSelected from './components/DeleteButton/DeleteSelected';
 import OpenImage from './components/OpenButton/OpenImage';
+import TextBlock from './components/TextBlock/TextBlock';
 
 const App = () => {
 	const { editor, onReady } = useFabricJSEditor();
@@ -14,6 +15,7 @@ const App = () => {
 			<div className='w-56 flex flex-col items-center justify-start'>
 				<OpenImage editor={editor} />
 				<DeleteSelected editor={editor} />
+				<TextBlock editor={editor} />
 			</div>
 		</div>
 	);

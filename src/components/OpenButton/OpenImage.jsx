@@ -15,9 +15,9 @@ const OpenImage = ({ editor }) => {
 		fabric.Image.fromURL(
 			URL.createObjectURL(event.target.files[0]),
 			(imageObj) => {
-				editor?.canvas.clear();
 				editor?.canvas.centerObject(imageObj);
 				editor?.canvas.add(imageObj);
+				imageObj.sendBackwards();
 				editor?.canvas.setActiveObject(imageObj);
 			},
 			{
@@ -31,7 +31,7 @@ const OpenImage = ({ editor }) => {
 	return (
 		<>
 			<button
-				className='w-28 h-8 bg-blue-450 text-sm text-white uppercase rounded-sm p-1.5 leading-3 hover:shadow-md'
+				className='w-28 h-8 bg-blue-450 text-xs text-white uppercase rounded-sm p-1.5 leading-3 hover:shadow-md'
 				onClick={handleImageOpen}
 			>
 				Open Image
