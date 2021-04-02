@@ -10,8 +10,8 @@ const TextBlock = ({ editor }) => {
 	const handleTextBlock = () => {
 		const textBox = new fabric.IText('TEXT BOX', {
 			...textInfo,
-			top: 60,
-			left: 60,
+			top: 100,
+			left: 200,
 			fontSize: 40,
 			fontWeight: 'normal'
 		});
