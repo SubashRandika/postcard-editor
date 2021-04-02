@@ -15,9 +15,15 @@ const OpenImage = ({ editor }) => {
 		fabric.Image.fromURL(
 			URL.createObjectURL(event.target.files[0]),
 			(imageObj) => {
-				editor.canvas.clear();
-				editor.canvas.centerObject(imageObj);
-				editor.canvas.add(imageObj);
+				editor?.canvas.clear();
+				editor?.canvas.centerObject(imageObj);
+				editor?.canvas.add(imageObj);
+				editor?.canvas.setActiveObject(imageObj);
+			},
+			{
+				transparentCorners: false,
+				cornerColor: '#63ABFF',
+				cornerSize: 8
 			}
 		);
 	};
