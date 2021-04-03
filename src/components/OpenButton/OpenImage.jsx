@@ -28,7 +28,8 @@ const OpenImage = ({ editor }) => {
 			{
 				transparentCorners: false,
 				cornerColor: '#63ABFF',
-				cornerSize: 8
+				cornerSize: 8,
+				crossOrigin: 'anonymous'
 			}
 		);
 	};

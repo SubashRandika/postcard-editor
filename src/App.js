@@ -12,6 +12,7 @@ import RotateButton from './components/Rotate/RotateButton';
 import TextBlock from './components/TextBlock/TextBlock';
 import ZoomIn from './components/Zoom/ZoomIn';
 import ZoomOut from './components/Zoom/ZoomOut';
+import SavePhoto from './components/Save/SavePhoto';
 
 const App = () => {
 	const { editor, onReady } = useFabricJSEditor();
@@ -52,6 +53,7 @@ const App = () => {
 				<UnGroupButton editor={editor} />
 				<UndoButton editor={editor} />
 				<RedoButton editor={editor} />
+				<SavePhoto editor={editor} />
 			</div>
 		</div>
 	);
