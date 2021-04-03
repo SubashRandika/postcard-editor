@@ -14,6 +14,8 @@ const TextBlock = ({ editor }) => {
 			left: editor?.canvas.getWidth() / 2,
 			fontSize: 40,
 			fontWeight: 'normal',
+			fontFamily: 'Roboto',
+			fill: '#000000',
 			transparentCorners: false,
 			cornerColor: '#63ABFF',
 			cornerSize: 8,
