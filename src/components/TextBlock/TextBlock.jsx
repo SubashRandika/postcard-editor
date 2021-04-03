@@ -13,7 +13,10 @@ const TextBlock = ({ editor }) => {
 			top: 100,
 			left: 200,
 			fontSize: 40,
-			fontWeight: 'normal'
+			fontWeight: 'normal',
+			transparentCorners: false,
+			cornerColor: '#63ABFF',
+			cornerSize: 8
 		});
 
 		editor?.canvas.add(textBox);
