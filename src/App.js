@@ -1,9 +1,12 @@
-import { useFabricJSEditor } from 'fabricjs-react';
 import { useEffect } from 'react';
+import { useFabricJSEditor } from 'fabricjs-react';
+import 'fabric-history';
 import CanvasArea from './components/Canvas/CanvasArea';
 import DeleteSelected from './components/DeleteButton/DeleteSelected';
 import GroupButton from './components/Group/GroupButton';
 import UnGroupButton from './components/Group/UnGroupButton';
+import RedoButton from './components/History/RedoButton';
+import UndoButton from './components/History/UndoButton';
 import OpenImage from './components/OpenButton/OpenImage';
 import RotateButton from './components/Rotate/RotateButton';
 import TextBlock from './components/TextBlock/TextBlock';
@@ -47,6 +50,8 @@ const App = () => {
 				<RotateButton editor={editor} />
 				<GroupButton editor={editor} />
 				<UnGroupButton editor={editor} />
+				<UndoButton editor={editor} />
+				<RedoButton editor={editor} />
 			</div>
 		</div>
 	);
