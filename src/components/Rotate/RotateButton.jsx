@@ -1,13 +1,10 @@
-import React, { useContext } from 'react';
-import { ImageContext } from '../../context/ImageContext';
+import React from 'react';
 
 const RotateButton = ({ editor }) => {
-	const image = useContext(ImageContext)[0];
-
 	const handleRotate = () => {
-		const currentImageAngle = image.angle;
-		image.angle = currentImageAngle + 90;
-		editor?.canvas.renderAll();
+		const currentImageAngle = editor?.canvas.getActiveObject().angle;
+		editor.canvas.getActiveObject().angle = currentImageAngle + 90;
+		editor?.canvas.requestRenderAll();
 	};
 
 	return (

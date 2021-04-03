@@ -2,12 +2,13 @@ import { useFabricJSEditor } from 'fabricjs-react';
 import { useEffect } from 'react';
 import CanvasArea from './components/Canvas/CanvasArea';
 import DeleteSelected from './components/DeleteButton/DeleteSelected';
+import GroupButton from './components/Group/GroupButton';
+import UnGroupButton from './components/Group/UnGroupButton';
 import OpenImage from './components/OpenButton/OpenImage';
 import RotateButton from './components/Rotate/RotateButton';
 import TextBlock from './components/TextBlock/TextBlock';
 import ZoomIn from './components/Zoom/ZoomIn';
 import ZoomOut from './components/Zoom/ZoomOut';
-import { ImageProvider } from './context/ImageContext';
 
 const App = () => {
 	const { editor, onReady } = useFabricJSEditor();
@@ -33,21 +34,21 @@ const App = () => {
 	}, [editor]);
 
 	return (
-		<ImageProvider>
-			<div className='h-screen p-16 flex divide-x divide-gray-250'>
-				<div className='flex flex-1 items-start justify-center'>
-					<CanvasArea onReady={onReady} />
-				</div>
-				<div className='w-56 flex flex-col items-center justify-start'>
-					<OpenImage editor={editor} />
-					<DeleteSelected editor={editor} />
-					<TextBlock editor={editor} />
-					<ZoomIn editor={editor} />
-					<ZoomOut editor={editor} />
-					<RotateButton editor={editor} />
-				</div>
+		<div className='h-screen p-16 flex divide-x divide-gray-250'>
+			<div className='flex flex-1 items-start justify-center'>
+				<CanvasArea onReady={onReady} />
 			</div>
-		</ImageProvider>
+			<div className='w-56 flex flex-col items-center justify-start'>
+				<OpenImage editor={editor} />
+				<DeleteSelected editor={editor} />
+				<TextBlock editor={editor} />
+				<ZoomIn editor={editor} />
+				<ZoomOut editor={editor} />
+				<RotateButton editor={editor} />
+				<GroupButton editor={editor} />
+				<UnGroupButton editor={editor} />
+			</div>
+		</div>
 	);
 };
 

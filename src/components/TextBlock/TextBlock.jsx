@@ -10,18 +10,22 @@ const TextBlock = ({ editor }) => {
 	const handleTextBlock = () => {
 		const textBox = new fabric.IText('TEXT BOX', {
 			...textInfo,
-			top: 100,
-			left: 200,
+			top: editor?.canvas.getHeight() / 2,
+			left: editor?.canvas.getWidth() / 2,
 			fontSize: 40,
 			fontWeight: 'normal',
 			transparentCorners: false,
 			cornerColor: '#63ABFF',
-			cornerSize: 8
+			cornerSize: 8,
+			textAlign: 'center',
+			originX: 'middle',
+			originY: 'middle'
 		});
 
 		editor?.canvas.add(textBox);
 		textBox.bringForward();
 		editor?.canvas.setActiveObject(textBox);
+		editor?.canvas.requestRenderAll();
 	};
 
 	const handleTextChange = (event) => {
