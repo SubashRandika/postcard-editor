@@ -11,7 +11,7 @@ const ZoomIn = ({ editor }) => {
 		}
 
 		editor?.canvas.setZoom(editor?.canvas.getZoom() * SCALE_FACTOR);
-		editor?.canvas.renderAll();
+		editor?.canvas.requestRenderAll();
 	};
 
 	return (
