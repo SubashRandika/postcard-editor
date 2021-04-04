@@ -41,8 +41,8 @@ const TextBlock = ({ editor }) => {
 	};
 
 	return (
-		<div className='mt-10 flex flex-col items-center'>
-			<div className='flex items-center'>
+		<div className='flex flex-col w-full items-center mt-10 pl-10'>
+			<div className='flex items-center w-full'>
 				<input
 					name='fill'
 					className='w-10 h-9'
