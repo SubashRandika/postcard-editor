@@ -8,6 +8,7 @@ const UndoButton = ({ editor }) => {
 
 	return (
 		<button
+			data-testid='pce-undo-button'
 			className='w-28 h-8 bg-blue-450 text-xs text-white uppercase rounded-sm p-1.5 leading-3 hover:shadow-md mt-10'
 			onClick={handleUndoAction}
 		>
