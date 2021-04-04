@@ -38,12 +38,14 @@ const OpenImage = ({ editor }) => {
 	return (
 		<>
 			<button
+				data-testid='pce-open-image'
 				className='w-28 h-8 bg-blue-450 text-xs text-white uppercase rounded-sm p-1.5 leading-3 hover:shadow-md'
 				onClick={handleImageOpen}
 			>
 				Open Image
 			</button>
 			<input
+				data-testid='pce-file-input'
 				type='file'
 				ref={hiddenFileInput}
 				onChange={handleImageUpload}

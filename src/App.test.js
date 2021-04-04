@@ -1,4 +1,9 @@
-// import { render, screen } from '@testing-library/react';
-// import App from './App';
+import { render, cleanup } from '@testing-library/react';
+import App from './App';
 
-test('renders learn react link', () => {});
+describe('App', () => {
+	afterEach(cleanup);
+	it('renders App component', () => {
+		render(<App />);
+	});
+});
