@@ -3,7 +3,7 @@ import App from './App';
 
 describe('App', () => {
 	afterEach(cleanup);
-	it('renders App component', () => {
+	it('renders application component', () => {
 		render(<App />);
 	});
 });
