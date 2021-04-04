@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { fabric } from 'fabric';
+import Dropdown from '../Common/DropDown';
+import { fontFamilies, fontSizes } from './fontData.js';
 
 const TextBlock = ({ editor }) => {
 	const [textInfo, setTextInfo] = useState({
 		fontSize: 40,
-		fontFamily: 'Roboto',
+		fontFamily: "'Roboto', sans-serif",
 		fill: '#000000'
 	});
 
@@ -14,8 +16,6 @@ const TextBlock = ({ editor }) => {
 			top: editor?.canvas.getHeight() / 2,
 			left: editor?.canvas.getWidth() / 2,
 			fontWeight: 'normal',
-			fontFamily: 'Roboto',
-			fill: '#000000',
 			transparentCorners: false,
 			cornerColor: '#63ABFF',
 			cornerSize: 8,
@@ -50,78 +50,36 @@ const TextBlock = ({ editor }) => {
 					value={textInfo.fill}
 					onChange={handleTextChange}
 				/>
-				<div className='relative inline-flex ml-3'>
-					<svg
-						className='w-2 absolute top-0 right-0 m-3.5 pointer-events-none'
-						xmlns='http://www.w3.org/2000/svg'
-						viewBox='0 0 412 232'
-					>
-						<path
-							d='M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z'
-							fill='#648299'
-							fillRule='nonzero'
-						/>
-					</svg>
-					<select
-						name='fontFamily'
-						className='border border-gray-300 text-xs text-gray-600 h-8 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none'
-						onChange={handleTextChange}
-					>
-						<option value='Arial, sans-serif'>Arial</option>
-						<option value="'Times New Roman', serif">Times New Roman</option>
-						<option value="'Open Sans', sans-serif">Open Sans</option>
-						<option value="'Courier New', monospace">Courier New</option>
-						<option value="'Lato', sans-serif">Lato</option>
-						<option value="'Lobster', cursive">Lobster</option>
-						<option selected value='Roboto'>
-							Roboto
+				<Dropdown
+					name='fontFamily'
+					value={textInfo.fontFamily}
+					rootStyles='relative inline-flex ml-3'
+					svgStyles='w-2 absolute top-0 right-0 m-3.5 pointer-events-none'
+					selectStyles='border border-gray-300 text-xs text-gray-600 h-8 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none'
+					handleOnChange={handleTextChange}
+				>
+					{fontFamilies.map((font, index) => (
+						<option key={index} value={font.value}>
+							{font.label}
 						</option>
-						<option value="'New Tegomin', serif">New Tegomin</option>
-						<option value="'Pacifico', cursive">Pacifico</option>
-						<option value="'Train One', cursive">Train One</option>
-						<option value="'Yatra One', cursive">Yatra One</option>
-					</select>
-				</div>
+					))}
+				</Dropdown>
 			</div>
 			<div className='flex items-center w-full'>
-				<div className='relative inline-flex mr-2 mt-4'>
-					<svg
-						className='w-2 absolute top-0 right-0 my-3.5 mr-2 pointer-events-none'
-						xmlns='http://www.w3.org/2000/svg'
-						viewBox='0 0 412 232'
-					>
-						<path
-							d='M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z'
-							fill='#648299'
-							fillRule='nonzero'
-						/>
-					</svg>
-					<select
-						name='fontSize'
-						className='border border-gray-300 text-xs text-gray-600 h-8 pl-2 pr-5 bg-white hover:border-gray-400 focus:outline-none appearance-none'
-						onChange={handleTextChange}
-					>
-						<option value={10}>10</option>
-						<option value={12}>12</option>
-						<option value={14}>14</option>
-						<option value={16}>16</option>
-						<option value={18}>18</option>
-						<option value={20}>20</option>
-						<option value={24}>24</option>
-						<option value={28}>28</option>
-						<option value={32}>32</option>
-						<option value={36}>36</option>
-						<option selected value={40}>
-							40
+				<Dropdown
+					name='fontSize'
+					value={textInfo.fontSize}
+					rootStyles='relative inline-flex mr-2 mt-4'
+					svgStyles='w-2 absolute top-0 right-0 my-3.5 mr-2 pointer-events-none'
+					selectStyles='border border-gray-300 text-xs text-gray-600 h-8 pl-2 pr-5 bg-white hover:border-gray-400 focus:outline-none appearance-none'
+					handleOnChange={handleTextChange}
+				>
+					{fontSizes.map((size, index) => (
+						<option key={index} value={size.value}>
+							{size.label}
 						</option>
-						<option value={42}>42</option>
-						<option value={50}>50</option>
-						<option value={60}>60</option>
-						<option value={64}>64</option>
-						<option value={72}>72</option>
-						<option value={96}>96</option>
-					</select>
-				</div>
+					))}
+				</Dropdown>
 				<button
 					className='w-28 h-8 bg-blue-450 text-xs text-white uppercase rounded-sm p-1.5 leading-3 hover:shadow-md mt-4'
 					onClick={handleTextBlock}
