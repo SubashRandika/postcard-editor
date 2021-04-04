@@ -8,7 +8,7 @@ const CanvasArea = ({ onReady }) => {
 			data-testid='pce-main-canvas'
 			className='w-full h-full flex items-center justify-center mr-10 shadow-canvas'
 		>
-			<FabricJSCanvas onReady={onReady} />
+			<FabricJSCanvas className='w-full h-full' onReady={onReady} />
 		</div>
 	);
 };
