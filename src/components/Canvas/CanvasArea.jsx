@@ -4,10 +4,12 @@ import { FabricJSCanvas } from 'fabricjs-react';
 
 const CanvasArea = ({ onReady }) => {
 	return (
-		<FabricJSCanvas
+		<div
+			data-testid='pce-main-canvas'
 			className='w-full h-full flex items-center justify-center mr-10 shadow-canvas'
-			onReady={onReady}
-		/>
+		>
+			<FabricJSCanvas onReady={onReady} />
+		</div>
 	);
 };
 
