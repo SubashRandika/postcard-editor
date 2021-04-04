@@ -12,7 +12,7 @@ import RotateButton from './components/Rotate/RotateButton';
 import TextBlock from './components/TextBlock/TextBlock';
 import ZoomIn from './components/Zoom/ZoomIn';
 import ZoomOut from './components/Zoom/ZoomOut';
-import SavePhoto from './components/Save/SavePhoto';
+import DownloadPhoto from './components/Download/DownloadPhoto';
 
 const App = () => {
 	const { editor, onReady } = useFabricJSEditor();
@@ -39,10 +39,10 @@ const App = () => {
 
 	return (
 		<div className='h-screen p-16 flex divide-x divide-gray-250'>
-			<div className='flex flex-1 items-start justify-center'>
+			<div className='flex w-10/12 items-start'>
 				<CanvasArea onReady={onReady} />
 			</div>
-			<div className='w-56 flex flex-col items-center justify-start'>
+			<div className='flex w-1/6 flex-col items-center justify-start'>
 				<OpenImage editor={editor} />
 				<DeleteSelected editor={editor} />
 				<TextBlock editor={editor} />
@@ -53,7 +53,7 @@ const App = () => {
 				<UnGroupButton editor={editor} />
 				<UndoButton editor={editor} />
 				<RedoButton editor={editor} />
-				<SavePhoto editor={editor} />
+				<DownloadPhoto editor={editor} />
 			</div>
 		</div>
 	);
