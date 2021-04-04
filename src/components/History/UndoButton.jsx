@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const UndoButton = ({ editor }) => {
 	const handleUndoAction = () => {
@@ -13,6 +14,10 @@ const UndoButton = ({ editor }) => {
 			Undo
 		</button>
 	);
+};
+
+UndoButton.propTypes = {
+	editor: PropTypes.object
 };
 
 export default UndoButton;

@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import Dropdown from '../Common/DropDown';
 
 const DownloadPhoto = ({ editor }) => {
@@ -65,6 +66,10 @@ const DownloadPhoto = ({ editor }) => {
 			</button>
 		</div>
 	);
+};
+
+DownloadPhoto.propTypes = {
+	editor: PropTypes.object
 };
 
 export default DownloadPhoto;

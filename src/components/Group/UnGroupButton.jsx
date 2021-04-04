@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const UnGroupButton = ({ editor }) => {
 	const handleUnGroupSelected = () => {
@@ -26,6 +27,10 @@ const UnGroupButton = ({ editor }) => {
 			UnGroup
 		</button>
 	);
+};
+
+UnGroupButton.propTypes = {
+	editor: PropTypes.object
 };
 
 export default UnGroupButton;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ZoomOut = ({ editor }) => {
 	const minZoom = 0.1;
@@ -22,6 +23,10 @@ const ZoomOut = ({ editor }) => {
 			Zoom Out
 		</button>
 	);
+};
+
+ZoomOut.propTypes = {
+	editor: PropTypes.object
 };
 
 export default ZoomOut;

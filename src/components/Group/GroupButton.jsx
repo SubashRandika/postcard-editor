@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const GroupButton = ({ editor }) => {
 	const handleGroupSelected = () => {
@@ -26,6 +27,10 @@ const GroupButton = ({ editor }) => {
 			Group
 		</button>
 	);
+};
+
+GroupButton.propTypes = {
+	editor: PropTypes.object
 };
 
 export default GroupButton;

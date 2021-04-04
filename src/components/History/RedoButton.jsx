@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const RedoButton = ({ editor }) => {
 	const handleRedoAction = () => {
@@ -13,6 +14,10 @@ const RedoButton = ({ editor }) => {
 			Redo
 		</button>
 	);
+};
+
+RedoButton.propTypes = {
+	editor: PropTypes.object
 };
 
 export default RedoButton;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { fabric } from 'fabric';
 import Dropdown from '../Common/DropDown';
 import { fontFamilies, fontSizes } from './fontData.js';
@@ -89,6 +90,10 @@ const TextBlock = ({ editor }) => {
 			</div>
 		</div>
 	);
+};
+
+TextBlock.propTypes = {
+	editor: PropTypes.object
 };
 
 export default TextBlock;

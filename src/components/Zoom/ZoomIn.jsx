@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ZoomIn = ({ editor }) => {
 	const maxZoom = 23;
@@ -22,6 +23,10 @@ const ZoomIn = ({ editor }) => {
 			Zoom In
 		</button>
 	);
+};
+
+ZoomIn.propTypes = {
+	editor: PropTypes.object
 };
 
 export default ZoomIn;

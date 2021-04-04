@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const DeleteSelected = ({ editor }) => {
 	const handleDeleteSelected = () => {
@@ -13,6 +14,10 @@ const DeleteSelected = ({ editor }) => {
 			Delete
 		</button>
 	);
+};
+
+DeleteSelected.propTypes = {
+	editor: PropTypes.object
 };
 
 export default DeleteSelected;

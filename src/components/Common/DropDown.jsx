@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Dropdown = ({
 	name,
@@ -32,6 +33,16 @@ const Dropdown = ({
 			</select>
 		</div>
 	);
+};
+
+Dropdown.propTypes = {
+	name: PropTypes.string.isRequired,
+	value: PropTypes.any.isRequired,
+	rootStyles: PropTypes.string.isRequired,
+	svgStyles: PropTypes.string.isRequired,
+	selectStyles: PropTypes.string.isRequired,
+	handleOnChange: PropTypes.func.isRequired,
+	children: PropTypes.node.isRequired
 };
 
 export default Dropdown;

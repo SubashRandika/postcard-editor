@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FabricJSCanvas } from 'fabricjs-react';
 
 const CanvasArea = ({ onReady }) => {
@@ -8,6 +9,10 @@ const CanvasArea = ({ onReady }) => {
 			onReady={onReady}
 		/>
 	);
+};
+
+CanvasArea.propTypes = {
+	onReady: PropTypes.func
 };
 
 export default CanvasArea;

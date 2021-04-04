@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
 import { fabric } from 'fabric';
 
 const OpenImage = ({ editor }) => {
@@ -50,6 +51,10 @@ const OpenImage = ({ editor }) => {
 			/>
 		</>
 	);
+};
+
+OpenImage.propTypes = {
+	editor: PropTypes.object
 };
 
 export default OpenImage;

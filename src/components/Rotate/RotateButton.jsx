@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const RotateButton = ({ editor }) => {
 	const handleRotate = () => {
@@ -15,6 +16,10 @@ const RotateButton = ({ editor }) => {
 			Rotate
 		</button>
 	);
+};
+
+RotateButton.propTypes = {
+	editor: PropTypes.object
 };
 
 export default RotateButton;
