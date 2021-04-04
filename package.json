@@ -1,5 +1,6 @@
 {
 	"name": "postcard-editor",
+	"description": "Simple post card editor. Provide tools to add photos, text-boxes. Possible to rotate, zoom in/out, group/un-group and save image locally.",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
