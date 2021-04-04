@@ -45,6 +45,7 @@ const TextBlock = ({ editor }) => {
 		<div className='flex flex-col w-full items-center mt-10 pl-10'>
 			<div className='flex items-center w-full'>
 				<input
+					data-testid='pce-color-input'
 					name='fill'
 					className='w-10 h-9'
 					type='color'
@@ -82,6 +83,7 @@ const TextBlock = ({ editor }) => {
 					))}
 				</Dropdown>
 				<button
+					data-testid='pce-textbox-button'
 					className='w-28 h-8 bg-blue-450 text-xs text-white uppercase rounded-sm p-1.5 leading-3 hover:shadow-md mt-4'
 					onClick={handleTextBlock}
 				>

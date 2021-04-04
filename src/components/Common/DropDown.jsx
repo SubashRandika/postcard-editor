@@ -11,7 +11,7 @@ const Dropdown = ({
 	children
 }) => {
 	return (
-		<div className={rootStyles}>
+		<div data-testid={`pce-${name}`} className={rootStyles}>
 			<svg
 				className={svgStyles}
 				xmlns='http://www.w3.org/2000/svg'
