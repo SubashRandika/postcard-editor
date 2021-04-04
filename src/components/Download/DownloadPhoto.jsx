@@ -51,6 +51,7 @@ const DownloadPhoto = ({ editor }) => {
 				<option value='jpeg'>JPEG</option>
 			</Dropdown>
 			<a
+				data-testid='pce-hidden-download'
 				className='hidden'
 				href={imageUrl}
 				download='Photo'
@@ -59,6 +60,7 @@ const DownloadPhoto = ({ editor }) => {
 				Edited Photo
 			</a>
 			<button
+				data-testid='pce-download-button'
 				className='w-28 h-8 bg-green-600 text-xs text-white uppercase rounded-sm p-1.5 leading-3 hover:shadow-md mt-4'
 				onClick={handleDownloadImage}
 			>
