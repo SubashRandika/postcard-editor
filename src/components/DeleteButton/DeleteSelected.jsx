@@ -8,6 +8,7 @@ const DeleteSelected = ({ editor }) => {
 
 	return (
 		<button
+			data-testid='pce-delete-button'
 			className='w-28 h-8 bg-red-500 text-xs text-white uppercase rounded-sm p-1.5 leading-3 hover:shadow-md mt-4'
 			onClick={handleDeleteSelected}
 		>
